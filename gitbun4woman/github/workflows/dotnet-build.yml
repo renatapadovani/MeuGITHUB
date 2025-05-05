@@ -1,0 +1,19 @@
+name: Executar em push e a cada hora
+
+on:
+  push:
+    branches:
+      - main  # ou a branch que você quiser monitorar
+  schedule:
+    - cron: '0 * * * *'  # executa a cada hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: Exemplo de execução
+        run: echo "Workflow executado com sucesso!"
